@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def home
-    @page_heading = "Welcome to wesellallot.com, Here is what we have for sale!"
+    @page_heading = "Welcome to wesellalot.com, Here is what we have for sale!"
     @item = Item.all
   end
 
