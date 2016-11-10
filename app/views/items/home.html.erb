@@ -2,8 +2,9 @@
 <%@item.each do |item| %>
   
   <div class="well"><h2>
-  Product: <%=item.name%>
+  Product: <%=item.name%><br></br>
   Price: $<%=item.price%>
+  <a class="btn btn-primary" href="/<%=item.product_type%>" role="button">Link</a>
   </div></h2>
 
 <%end%>
