@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20161110034527) do
     t.string   "name"
     t.string   "price"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "product_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

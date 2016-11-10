@@ -1,1 +1,9 @@
-<%= @page_heading%>
+<h1><%= @page_heading%></h1>
+<%@item.each do |item| %>
+  
+  <div class="well"><h2>
+  Product: <%=item.name%>
+  Price: $<%=item.price%>
+  </div></h2>
+
+<%end%>
