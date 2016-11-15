@@ -1,1 +1,14 @@
-<%= @page_heading %>
+<h1><%= @page_heading%></h1>
+<%@item.each do |item| %>
+  <h3>
+  <%if item.product_type == "pants" %>
+    <div class="well">
+      Product: <%=item.name%></br>
+      Description: <%=item.description%></br>
+      Price: $<%=item.price%></br>
+      <a class="btn btn-primary" href="/<%=item.id%>" role="button"> Buy Now!</a>
+      </div>
+  <%end%>
+  </h3>
+<%end%>
+  
