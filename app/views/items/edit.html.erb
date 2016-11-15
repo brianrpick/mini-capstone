@@ -1,27 +1,27 @@
-<h1> New Item!</h1>
+<h1> Edit <%=@item.name%>!</h1>
 
-<%= form_tag '/create', method: :post do %>
+<%= form_tag "/update/#{@item.id}", method: :patch do %>
   <div>
     <%= label_tag :product_type, "Product Category"%>:
-    <%= text_field_tag :product_type%>
+    <%= text_field_tag :product_type, @item.product_type%>
   </div>
   <div>
     <%= label_tag :name, "Product Name"%>:
-    <%= text_field_tag :name%>
+    <%= text_field_tag :name, @item.name%>
   </div>
   <div>
     <%= label_tag :description, "Product Description"%>:
-    <%= text_field_tag :description%>
+    <%= text_field_tag :description, @item.description%>
   </div>
     <div>
     <%= label_tag :price, "Price"%>:
-    <%= text_field_tag :price%>
+    <%= text_field_tag :price, @item.price%>
     </div>
   <div>
     <%= label_tag :image, "Please insert a URL to your picture here"%>:
-    <%= text_field_tag :image%>
+    <%= text_field_tag :image, @item.image%>
   </div>
   <div>
-    <%= submit_tag "Submit" %>
+    <%= submit_tag "Submit Changes" %>
   </div>
 <%end%>

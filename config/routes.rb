@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   get "/buy/:id", to: "items#buy"
   get "/new", to: "items#new"
   post "/create", to: "items#create"
+  get "/show/:id/edit", to: "items#edit"
+  patch "/update/:id", to: "items#update"
+  get "/show/:id", to: "items#show"
+  
 end
 
+/update/#{@item.id}

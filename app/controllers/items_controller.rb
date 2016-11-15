@@ -23,6 +23,10 @@ class ItemsController < ApplicationController
     @item = Item.all
   end
 
+  def show
+    @item = Item.find_by(id: params[:id])
+  end
+
   def buy
     @item = Item.find_by(id: params[:id])
   end
@@ -35,4 +39,24 @@ class ItemsController < ApplicationController
     @item = Item.new(product_type: params[:product_type], name: params[:name].capitalize, description: params[:description], price: params[:price], image: params[:image])
     @item.save
   end
+
+  def edit
+    @item = Item.find_by(id: params[:id])
+  end
+  def update
+    item = Item.find_by(id: params[:id])
+    item.assign_attributes(product_type: params[:product_type], name: params[:name].capitalize, description: params[:description], price: params[:price], image: params[:image])
+    item.save
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
