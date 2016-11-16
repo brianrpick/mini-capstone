@@ -6,10 +6,10 @@ $<%=@item.price%></br>
 
 
 <div>
-  <%= button_to "Edit Recipe", "/show/#{@item.id}/edit"%>
+  <%= button_to "Edit Item", "/items/#{@item.id}/edit"%>
 </div>
 
 
 <div>
-  <%= link_to "Delete Item", "/show/#{@item.id}/delete", method: :delete%>
+  <%= link_to "Delete Item", "/items/#{@item.id}", method: :delete%>
 </div>
