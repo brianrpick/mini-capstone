@@ -3,3 +3,13 @@
 <%=@item.description%></br>
 $<%=@item.price%></br>
 </div>
+
+
+<div>
+  <%= button_to "Edit Recipe", "/show/#{@item.id}/edit"%>
+</div>
+
+
+<div>
+  <%= link_to "Delete Item", "/show/#{@item.id}/delete", method: :delete%>
+</div>

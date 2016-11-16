@@ -48,6 +48,11 @@ class ItemsController < ApplicationController
     item.assign_attributes(product_type: params[:product_type], name: params[:name].capitalize, description: params[:description], price: params[:price], image: params[:image])
     item.save
   end
+  def destroy
+    item = Item.find_by(id: params[:id])
+    item.destroy
+  end
+
 end
 
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/show/:id/edit", to: "items#edit"
   patch "/update/:id", to: "items#update"
   get "/show/:id", to: "items#show"
+  delete "/show/:id/delete", to: "items#destroy"
   
 end
 
