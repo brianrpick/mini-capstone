@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(product_type: params[:product_type], name: params[:name].capitalize, description: params[:description], price: params[:price], image: params[:image])
     @item.save
+    flash[:success] = "Recipe has been created!"
   end
 
   def edit
@@ -47,12 +48,14 @@ class ItemsController < ApplicationController
     item = Item.find_by(id: params[:id])
     item.assign_attributes(product_type: params[:product_type], name: params[:name].capitalize, description: params[:description], price: params[:price], image: params[:image])
     item.save
+    flash[:success] = "You have successfully edited the item."
     redirect_to "/items/#{@item.id}"
   end
 
   def destroy
     item = Item.find_by(id: params[:id])
     item.destroy
+    flash[:success] = "You have successfully deleted the item"
     redirect_to "/items"
   end
 
