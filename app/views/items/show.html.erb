@@ -1,12 +1,16 @@
-<div class="well">
-<%=@item.name%></br>
+<div class="col-md-4">
+<div class="jumbotron">
+<div class="container">
+<%=@item.name.capitalize%></br>
 <%=@item.description%></br>
 $<%=@item.price%></br>
+<img class = "image" src=<%=@item.image%></img>
+</div>
+</div>
 </div>
 
-
 <div>
-  <%= button_to "Edit Item", "/items/#{@item.id}/edit"%>
+  <%= link_to "Edit Item", "/items/#{@item.id}/edit"%>
 </div>
 
 

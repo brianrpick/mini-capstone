@@ -1,3 +1,25 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("graphy.png");
+}
+.image {
+  max-height: 200px;
+}
+.well {
+  height: 500px;
+  box-shadow: 3px 8px black;
+  background-color: #FFFAFA;
+}
+
+.title {
+  color: #FDF5E6;
+  text-align: center;
+  text-size: 200px;
+}
+
+.description{
+  font-size: 150%;
+}
