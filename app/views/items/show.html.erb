@@ -4,12 +4,21 @@
 <%=@item.name.capitalize%></br>
 <%=@item.description%></br>
 $<%=@item.price%></br>
+$<%=@item.tax%></br>
+$<%=@item.total%></br>
+<%=@item.sale_message%>
 <img class = "image" src=<%=@item.image%></img>
+<div>
+  <%= link_to "Edit Item", "/items/#{@item.id}/edit"%>
+</div>
+<div>
+  <%= link_to "Delete Item", "/items/#{@item.id}", method: :delete%>
+</div>
 </div>
 </div>
 </div>
 
-<div>
+<!-- <div>
   <%= link_to "Edit Item", "/items/#{@item.id}/edit"%>
 </div>
 
@@ -17,3 +26,4 @@ $<%=@item.price%></br>
 <div>
   <%= link_to "Delete Item", "/items/#{@item.id}", method: :delete%>
 </div>
+ -->
