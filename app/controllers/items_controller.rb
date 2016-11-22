@@ -20,11 +20,22 @@ class ItemsController < ApplicationController
 
   def index 
     @page_heading = "Here is what we have for sale!"
-    @item = Item.all
+    sort_by = params[:sort]
+    if params[:sort] == "priceDESC"
+      @item = Item.all.order(price: :DESC)
+    elsif params[:sort] == "discount"
+      @item = Item.all.where("price < ?", 100)
+    else
+      @item = Item.all.order(sort_by)
+    end
   end
 
   def show
-    @item = Item.find_by(id: params[:id])
+    if params[:id] == "rando"
+      @item = Item.all.order("RANDOM()").first
+    else
+      @item = Item.find_by(id: params[:id])
+    end
   end
 
   def buy

@@ -7,7 +7,7 @@
         <%= image_tag item.image, class: "image"%>
         <p class = "description">Price: $<%=item.description%></p>
         <h4>Price: $<%=item.price%></h4>
-        <a class="btn btn-primary" href="/<%=item.id%>" role="button"> Buy Now!</a>
+        <a class="btn btn-primary" href="/items/<%=item.id%>" role="button"> Buy Now!</a>
       </div>
     </div>
   <%end%>
