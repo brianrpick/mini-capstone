@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(product_type: params[:product_type], name: params[:name].capitalize, description: params[:description], price: params[:price], image: params[:image])
+    @item = Item.new(product_type: params[:product_type], name: params[:name].capitalize, description: params[:description], price: params[:price])
     @item.save
     flash[:success] = "Recipe has been created!"
   end
@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   end
   def update
     item = Item.find_by(id: params[:id])
-    item.assign_attributes(product_type: params[:product_type], name: params[:name], description: params[:description], price: params[:price], image: params[:image])
+    item.assign_attributes(product_type: params[:product_type], name: params[:name], description: params[:description], price: params[:price])
     item.save
     flash[:success] = "You have successfully edited the item."
     redirect_to "/items/#{item.id}"

@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   patch "/items/:id", to: "items#update"
   get "/items/:id", to: "items#show"
   delete "/items/:id", to: "items#destroy"
+
+  post "/items/:id/image", to: "images#create"
+  get "/items/:id/image", to: "images#new"
   
 end

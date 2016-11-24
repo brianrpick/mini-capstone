@@ -1,9 +1,9 @@
 <div class="col-md-4">
   <div class="jumbotron">
-    <div class="container">
+    <div class="container" id= "show">
       <%=@item.name.capitalize%></br>
-      <%=@item.description%></br>
-      Retail Price: $<p><%=@item.price%></br>
+      Description: <%=@item.description%></br>
+      <p id= "prices">Retail Price: $<%=@item.price%></br>
       Tax to be Collected: $<%=@item.tax%></br>
       Total Including Tax: $<%=@item.total%></br>
       <%=@item.sale_message%>
@@ -11,8 +11,11 @@
       <img class = "image" src="<%=image.url%>"></img>
       <%end%>
         <div>
-      <%=@item.supplier.name%>
+      <%=@item.supplier.name%></div></br>
           <%= link_to "Edit Item", "/items/#{@item.id}/edit"%>
+        </div>
+        <div>
+          <%= link_to "Add Image", "/items/#{@item.id}/image"%>
         </div>
         <div>
           <%= link_to "Delete Item", "/items/#{@item.id}", method: :delete%>

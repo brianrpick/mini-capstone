@@ -5,12 +5,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-image: url("graphy.png");
 }
+
 .image {
   max-height: 200px;
 }
+
 .well {
   height: 500px;
-  box-shadow: 3px 8px black;
+  box-shadow: 3px 10px black;
   background-color: #FFFAFA;
 }
 
@@ -19,7 +21,23 @@ body {
   text-align: center;
   text-size: 200px;
 }
+#prices{
+  font-size: 100%;
+}
+
+#show{
+  position: center;
+}
 
 .description{
   font-size: 150%;
+}
+
+#index{
+  background-color: white;
+  text-align: center;
+}
+
+#price{
+  position: absolute;
 }
