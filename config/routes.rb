@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/chairs", to: "items#chairs"
   get "/hats", to: "items#hats"
   get "/pants", to: "items#pants"
+  post "/search", to: "items#search"
   get "/items", to: "items#index"
   get "/buy/:id", to: "items#buy"
   get "/items/new", to: "items#new"

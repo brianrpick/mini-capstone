@@ -7,8 +7,11 @@
       Tax to be Collected: $<%=@item.tax%></br>
       Total Including Tax: $<%=@item.total%></br>
       <%=@item.sale_message%>
-      <img class = "image" src=<%=@item.image%>></img>
+      <%@item.images.each do |image|%>
+      <img class = "image" src="<%=image.url%>"></img>
+      <%end%>
         <div>
+      <%=@item.supplier.name%>
           <%= link_to "Edit Item", "/items/#{@item.id}/edit"%>
         </div>
         <div>

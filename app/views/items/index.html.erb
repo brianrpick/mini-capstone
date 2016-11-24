@@ -1,10 +1,17 @@
+<%= form_tag "/search", method: :post do %>
+  <%= label_tag :search %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
 <div class="row">
   <h1 class= "title"><%= @page_heading%></h1>
   <%@item.each do |item| %>
     <div class="col-lg-6 col-md-6 col-sm-3">
       <div class="well">
         <h2 class= "link"><%= link_to item.name, "/items/#{item.id}"%></h2>
-        <%= image_tag item.image, class: "image"%>
+        <%= image_tag item.images.first.url, class: "image"%>
         <p class = "description">Price: $<%=item.description%></p>
         <h4>Price: $<%=item.price%></h4>
         <a class="btn btn-primary" href="/items/<%=item.id%>" role="button"> Buy Now!</a>
@@ -12,3 +19,4 @@
     </div>
   <%end%>
 </div>
+

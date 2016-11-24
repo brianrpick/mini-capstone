@@ -17,14 +17,21 @@ class ItemsController < ApplicationController
     @page_heading = "Heres are the pants we sell"
     @item = Item.all
   end
-
+  def search
+    @search_term = params[:search]
+    @item = Item.where("product_type LIKE ?", "%#{@search_term}%")
+    render :index
+  end
   def index 
     @page_heading = "Here is what we have for sale!"
     sort_by = params[:sort]
+    p params[:sort]
     if params[:sort] == "priceDESC"
       @item = Item.all.order(price: :DESC)
     elsif params[:sort] == "discount"
       @item = Item.all.where("price < ?", 100)
+    elsif params[:sort] == "search"
+      @item = Item.all.where(sort_by)
     else
       @item = Item.all.order(sort_by)
     end
@@ -69,7 +76,6 @@ class ItemsController < ApplicationController
     flash[:danger] = "You have successfully deleted the item"
     redirect_to "/items"
   end
-
 end
 
 
