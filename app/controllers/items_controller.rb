@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  
+  before_action :authenticate_user!, except: [:home, :index, :pants, :hats, :chairs]
+
   def home
     @page_heading = "Welcome to wesellalot.com!"
   end

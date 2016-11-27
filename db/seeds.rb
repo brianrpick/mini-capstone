@@ -5,3 +5,5 @@ Item.create!([
   {name: "Baseball", price: "25.0", description: "This happens to be the hat that your favorite team wears on the field!", product_type: "hats", image: "http://www.flexfit.com/_images/hats_590x347/1393135096-Grey.png", stock: true},
   {name: "Lucky jeans", price: "150.0", description: "These jeans are LUCKY, youll always get what you want when you wear them", product_type: "pants", image: "http://freepngimages.com/wp-content/uploads/2015/12/light-blue-denim-jeans-transparent-image.png", stock: true}
 ])
+
+#run seeds: rails db:seed

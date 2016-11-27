@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  belongs_to :user
   belongs_to :supplier
   has_many :images
   def pretty_time
