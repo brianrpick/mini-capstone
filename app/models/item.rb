@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   belongs_to :supplier
+  has_many :orders
   has_many :images
   def pretty_time
     return created_at.strftime("%a, %r %b %y")

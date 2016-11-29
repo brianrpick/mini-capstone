@@ -20,7 +20,20 @@
         <div>
           <%= link_to "Delete Item", "/items/#{@item.id}", method: :delete%>
         </div>
+        <h1> Buy this item now!</h1>
+
+      <%= form_tag "/items/#{@item.id}/buy", method: :post do %>
+        <div>
+          <%= label_tag :quantity, "How many would you like to buy?"%>:
+          <%= text_field_tag :quantity%>
+        </div>
+        <div>
+          <%= submit_tag "Buy Now!" %>
+        </div>
+      <%end%>
     </div>
   </div>
 </div>
+
+
 

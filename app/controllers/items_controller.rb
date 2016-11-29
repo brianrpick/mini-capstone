@@ -46,6 +46,7 @@ class ItemsController < ApplicationController
     else
       @item = Item.find_by(id: params[:id])
     end
+    
   end
 
   def buy

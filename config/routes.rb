@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get "/pants", to: "items#pants"
   post "/search", to: "items#search"
   get "/items", to: "items#index"
-  get "/buy/:id", to: "items#buy"
   get "/items/new", to: "items#new"
   post "/items", to: "items#create"
   get "/items/:id/edit", to: "items#edit"
@@ -23,4 +22,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
+
+  get "/items/:id/buy", to: "orders#show"
+  post "/items/:id/buy", to: "orders#create"
 end
