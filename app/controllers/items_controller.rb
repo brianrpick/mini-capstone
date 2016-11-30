@@ -35,6 +35,9 @@ class ItemsController < ApplicationController
       @item = Item.all.where("price < ?", 100)
     elsif params[:sort] == "search"
       @item = Item.all.where(sort_by)
+    elsif params[:category]
+      category = Category.find_by(name: params[:category])
+      @item = categgory.items
     else
       @item = Item.all.order(sort_by)
     end

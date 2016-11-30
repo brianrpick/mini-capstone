@@ -3,6 +3,8 @@ class Item < ApplicationRecord
   belongs_to :supplier
   has_many :orders
   has_many :images
+  has_many :item_categories
+  has_many :categories, through: :item_categories
   def pretty_time
     return created_at.strftime("%a, %r %b %y")
   end
