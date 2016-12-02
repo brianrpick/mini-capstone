@@ -9,8 +9,11 @@ class CartedItemsController < ApplicationController
     redirect_to "/items"
   end
   def index 
-    @page_heading = "These are the items in your cart!"
+    @page_heading = "Here is your cart!"
     user = User.find_by(id: current_user.id)
     @cp = user.carted_items.where("status = ?", "carted")
+    if @cp.nil?
+      redirect_to "/items"
+    end
   end
 end

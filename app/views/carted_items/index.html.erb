@@ -1,7 +1,7 @@
 
 <%@cp.each do |item| %>
   <%=item.item.name%>
-
+  <%= link_to "Remove Item", "/cart/#{item.id}"%>
 <%end%>
 
 <%= button_to "Buy Now!", "/buy"%>

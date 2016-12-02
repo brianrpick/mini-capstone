@@ -1,10 +1,11 @@
 Your Order!
 
 Hey <%= current_user.name%>!</br>
-You bought: <%=@item.name%></br>
-Your order id is: <%=@order.id%></br>
-Your quantity was: <%= @order.quantity%></br>
-Your subtotal was: $<%= @order.subtotal%></br>
+<% @order.carted_items.each do |unit| %>
+You bought: <%=unit.item.name%></br>
+Your quantity was: <%= unit.quantity%></br>
+<%end%>
+Your subtotal is: $<%=@order.subtotal%></br>
 You paid: $<%=@order.tax%> in taxes </br>
 You paid: $<%= @order.total%> in total</br>
 
