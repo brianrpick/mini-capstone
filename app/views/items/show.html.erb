@@ -8,6 +8,9 @@
       Total Including Tax: $<%=@item.total%></br>
       <%=@item.sale_message%>
       <%@item.images.each do |image|%>
+      <%@item.categories.each do |category|%>
+        Category: <%=category.name%>
+      <%end%>
       <img class = "image" src="<%=image.url%>"></img>
       <%end%>
         <div>
@@ -28,8 +31,9 @@
           <%= text_field_tag :quantity%>
         </div>
         <div>
-          <%= submit_tag "Buy Now!" %>
+          <%= submit_tag "Add to Cart!" %>
         </div>
+
       <%end%>
     </div>
   </div>

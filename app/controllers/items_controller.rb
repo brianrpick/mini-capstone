@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
       @item = Item.all.where(sort_by)
     elsif params[:category]
       category = Category.find_by(name: params[:category])
-      @item = categgory.items
+      @item = category.items
     else
       @item = Item.all.order(sort_by)
     end

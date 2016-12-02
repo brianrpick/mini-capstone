@@ -1,10 +1,12 @@
 class Item < ApplicationRecord
-  belongs_to :user
   belongs_to :supplier
   has_many :orders
   has_many :images
   has_many :item_categories
   has_many :categories, through: :item_categories
+  has_many :carted_items
+  has_many :orders, through: :carted_items
+
   def pretty_time
     return created_at.strftime("%a, %r %b %y")
   end
@@ -18,11 +20,11 @@ class Item < ApplicationRecord
   end
 
   def tax
-    return price.to_i * 0.09
+    return price * 0.09
   end
 
   def total 
-    return price.to_i + (price.to_i * 0.09)
+    return price + (price * 0.09)
   end
 
 end

@@ -3,6 +3,10 @@
   <%= text_field_tag :search %>
   <%= submit_tag "Search" %>
 <% end %>
+<%Category.all.each do |category|%>
+
+<%= link_to "Category: #{category.name}", "/items/?category=#{category.name}"%>
+<%end%>
 
 
 <div class="row">
